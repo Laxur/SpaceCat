@@ -68,7 +68,8 @@ const Login = ({navigation}) => {
 const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
-    resizeMode: 'cover',
+    width: '100%', 
+    height: '100%',
     justifyContent: 'center',
   },
     container: {
@@ -104,13 +105,13 @@ const styles = StyleSheet.create({
     },
     text: {
       fontSize: 14,
-      color: '#000',
+      color: 'black',
       fontWeight: 'bold',
     },
     button: {
       width: 200,
       height: 50,
-      backgroundColor: 'blue',
+      backgroundColor: 'lightblue',
       borderRadius: 25,
       padding: 10,
       alignItems: 'center',
