@@ -17,7 +17,7 @@ const Crear = ({ navigation }) => {
     try {
       const response = await createUserWithEmailAndPassword(auth, email, password);
       console.log(response);
-      alert('Revisa tu correo!')
+      alert('Cuenta creada con exito!')
     } catch (error) {
       console.log(error);
       alert('Fallo en el registro: ' + error.message);
