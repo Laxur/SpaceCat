@@ -1,18 +1,26 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+
+const backgroundImg = require('../../assets/fondo2.jpeg');
 
 const Inicio = ({navigation}) => {
     return (
-        <View style={styles.container}>
-            <Text style={styles.titulo}>Inicio</Text>
-        </View>
-
+      <View style={styles.container}>
+        <ImageBackground source={backgroundImg} style={styles.backgroundImage} resizeMode="stretch">
+        <Text style={styles.titulo}>Inicio</Text>
+        </ImageBackground>
+      </View>
     );
 };
 
 export default Inicio;
 
 const styles = StyleSheet.create({
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+  },
     container: {
       flex: 1,
       backgroundColor: '#f1f1f1',

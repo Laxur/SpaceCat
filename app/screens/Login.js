@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 import { FIREBASE_AUTH } from '../../FirebaseConfig'
 import { StatusBar } from 'expo-status-bar';
 import { signInWithEmailAndPassword, getAuth} from 'firebase/auth';
 
-
+const backgroundImg = require('../../assets/Galaxia.jpeg');
 
 const Login = ({navigation}) => {
     const [email, setEmail] = useState('');
@@ -31,6 +31,7 @@ const Login = ({navigation}) => {
     
     return (
         <View style={styles.container}>
+        <ImageBackground source={backgroundImg} style={styles.backgroundImage}>
         <Text style={styles.titulo}>Bienvenido!</Text>
         <Text style={styles.subtitu}>Inicia sesion con tu cuenta.</Text>
         <TextInput
@@ -49,13 +50,14 @@ const Login = ({navigation}) => {
           onChangeText={(text) => setPassword(text)} 
         ></TextInput>
         <TouchableOpacity style={styles.button} onPress={Iniciar} >
-          <text style={styles.text}>Iniciar Sesion</text>
+          <Text style={styles.text}>Iniciar Sesion</Text>
         </TouchableOpacity>
         <Text style={styles.NoTiene}>¿No tienes una cuenta?</Text>
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('crear')}>
         <Text style={styles.text}>Crear Cuenta</Text>
         </TouchableOpacity>
         <StatusBar style="auto" />
+        </ImageBackground>
       </View>
     );
 };
@@ -64,20 +66,26 @@ const Login = ({navigation}) => {
     export default Login 
 
 const styles = StyleSheet.create({
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+  },
     container: {
       flex: 1,
       backgroundColor: '#f1f1f1',
       alignItems: 'center',
       justifyContent: 'center',
+      flexDirection: 'column',
     },
     titulo: {
       fontSize: 65,
-      color: '#34434D',
+      color: 'white',
       fontWeight: 'bold'
     },
     subtitu: {
       fontSize: 15,
-      color: 'gray'
+      color: 'white'
     },
     TextInput: {
       padding: 10,
