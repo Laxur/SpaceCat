@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
-import { ImageBackground, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 
-const backgroundImg = require('../../assets/fondo2.jpeg');
+const backgroundImg = require('../../assets/Galaxia.jpeg');
 
 const Inicio = ({navigation}) => {
     return (
-      <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.container}>
         <ImageBackground source={backgroundImg} style={styles.backgroundImage} resizeMode="stretch">
         <Text style={styles.titulo}>Inicio</Text>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Perfil')}>
+          <Text style={styles.text}>Perfil</Text>
+        </TouchableOpacity>
         </ImageBackground>
-      </View>
+      </ScrollView>
     );
 };
 
@@ -18,8 +21,9 @@ export default Inicio;
 const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
-    resizeMode: 'cover',
+    width: '100%',
     justifyContent: 'center',
+    alignItems: 'center',
   },
     container: {
       flex: 1,
@@ -31,5 +35,24 @@ const styles = StyleSheet.create({
       fontSize: 65,
       color: '#34434D',
       fontWeight: 'bold'
-    }
+    },
+    text: {
+      fontSize: 15,
+      color: 'black',
+      fontWeight: 'bold',
+      textAlign: 'center',
+    },
+    button: {
+      width: 200,
+      height: 50,
+      backgroundColor: 'lightblue',
+      borderRadius: 25,
+      padding: 10,
+      alignItems: 'center',
+      justifyContent: 'center',
+      alignSelf: 'center', // Alineación horizontal
+      textAlign: 'center', // Alineación vertical
+      marginTop: 20,
+      marginBottom: 10, // Espacio inferior
+    },
 });
