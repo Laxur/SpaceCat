@@ -17,7 +17,7 @@ const Login = ({ navigation }) => {
     try {
       const response = await signInWithEmailAndPassword(auth, email, password);
       console.log(response);
-      navigation.navigate('inicio');
+      navigation.navigate('Inicio');
     } catch (error) {
       console.log(error);
       alert('Fallo en el registro: ' + error.message);

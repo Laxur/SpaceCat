@@ -6,13 +6,14 @@ const backgroundImg = require('../../assets/Galaxia.jpeg');
 const Inicio = ({navigation}) => {
     return (
       <ScrollView contentContainerStyle={styles.container}>
-        <ImageBackground source={backgroundImg} style={styles.backgroundImage} resizeMode="stretch">
-        <Text style={styles.titulo}>Inicio</Text>
+      <ImageBackground source={backgroundImg} style={styles.backgroundImage}>
+        <View>
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Perfil')}>
           <Text style={styles.text}>Perfil</Text>
         </TouchableOpacity>
-        </ImageBackground>
-      </ScrollView>
+        </View>
+      </ImageBackground>
+    </ScrollView>
     );
 };
 
