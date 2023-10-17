@@ -9,7 +9,6 @@ const Perfil = ({ navigation }) => {
   const [imageUri, setImageUri] = useState(null);
 
   useEffect(() => {
-    // Solicitar permisos para acceder a la galería de imágenes
     (async () => {
       const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
       if (status !== 'granted') {

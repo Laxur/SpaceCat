@@ -48,7 +48,7 @@ const Crear = ({ navigation }) => {
           <Text style={styles.text}>Continuar</Text>
         </TouchableOpacity>
         <Text style={styles.subTittle}>¿Ya tienes cuenta?</Text>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('login')}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')}>
           <Text style={styles.text}>Iniciar sesión</Text>
         </TouchableOpacity>
       </ImageBackground>

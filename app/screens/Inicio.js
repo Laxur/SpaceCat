@@ -3,7 +3,7 @@ import { ImageBackground, StyleSheet, Text, View, TextInput, TouchableOpacity, S
 
 const backgroundImg = require('../../assets/Galaxia.jpeg');
 
-const Inicio = ({navigation}) => {
+function Inicio  ({navigation})  {
     return (
       <ScrollView contentContainerStyle={styles.container}>
       <ImageBackground source={backgroundImg} style={styles.backgroundImage}>

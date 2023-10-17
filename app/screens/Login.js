@@ -50,7 +50,7 @@ const Login = ({ navigation }) => {
           <Text style={styles.text}>Iniciar Sesión</Text>
         </TouchableOpacity>
         <Text style={styles.NoTiene}>¿No tienes una cuenta?</Text>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('crear')}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Crear')}>
           <Text style={styles.text}>Crear Cuenta</Text>
         </TouchableOpacity>
         <StatusBar style="auto" />
