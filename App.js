@@ -8,6 +8,7 @@ import Crear from './app/screens/Crear';
 import Inicio from './app/screens/Inicio';
 import Perfil from './app/screens/Perfil';
 import CustomDrawer from './CustomDrawer';
+import Busqueda from './app/screens/Busqueda';
 
 const Drawer = createDrawerNavigator();
 
@@ -28,6 +29,11 @@ const DrawerNavigator = () => {
       <Drawer.Screen name='Perfil' component={Perfil} options={{
         drawerIcon: ({color}) => (
           <Ionicons name='person-outline' size={22} color={color} />
+        )
+      }}/>
+      <Drawer.Screen name='Busqueda' component={Busqueda} options={{
+        drawerIcon: ({color}) => (
+          <Ionicons name="search-outline" size={22} color={color} />
         )
       }}/>
     </Drawer.Navigator>
