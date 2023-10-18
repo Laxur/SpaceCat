@@ -7,11 +7,9 @@ function Inicio  ({navigation})  {
     return (
       <ScrollView contentContainerStyle={styles.container}>
       <ImageBackground source={backgroundImg} style={styles.backgroundImage}>
-        <View>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Perfil')}>
-          <Text style={styles.text}>Perfil</Text>
-        </TouchableOpacity>
-        </View>
+      <TouchableOpacity onPress={() => navigation.openDrawer()}>
+          <ImageBackground source={require('../../assets/LogoV2.png')} style={styles.menu} />
+      </TouchableOpacity>
       </ImageBackground>
     </ScrollView>
     );
@@ -25,6 +23,14 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  menu: {
+    width: 60,
+    height: 60,
+    borderRadius: 10,
+    position: 'absolute',
+    top: -400,
+    left: -185,
   },
     container: {
       flex: 1,
