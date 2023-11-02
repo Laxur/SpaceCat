@@ -3,8 +3,11 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity, ImageBackground, S
 import { FIREBASE_AUTH } from '../../FirebaseConfig';
 import { StatusBar } from 'expo-status-bar';
 import { signInWithEmailAndPassword, getAuth } from 'firebase/auth';
+import { Image } from 'react-native';
+
 
 const backgroundImg = require('../../assets/Galaxia.jpeg');
+const logo = require('../../assets/LogoV2.png');
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -29,6 +32,7 @@ const Login = ({ navigation }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <ImageBackground source={backgroundImg} style={styles.backgroundImage}>
+      <Image source={logo} style={styles.logo} />
         <Text style={styles.titulo}>Bienvenido!</Text>
         <Text style={styles.subtitu}>Inicia sesion con tu cuenta.</Text>
         <TextInput
@@ -67,6 +71,11 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  logo: {
+    width: 200,
+    height: 200, 
+    marginBottom: 5, 
   },
   container: {
     flex: 1,

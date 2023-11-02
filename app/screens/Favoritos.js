@@ -4,10 +4,11 @@ import * as ImagePicker from 'expo-image-picker';
 import MarcadoresButton from '../../components/MarcadoresButton';
 import FavoritosButton from '../../components/FavoritosButton';
 
+
 const backgroundImg = require('../../assets/Galaxia.jpeg');
 const PlaceholderImage = require('../../assets/Fperfil.jpg');
 
-const Perfil = ({ navigation }) => {
+const Favoritos = ({ navigation }) => {
   const [imageUri, setImageUri] = useState(null);
 
   useEffect(() => {
@@ -58,8 +59,7 @@ const Perfil = ({ navigation }) => {
   );
 };
 
-export default Perfil;
-
+export default Favoritos;
 
 const styles = StyleSheet.create({
 

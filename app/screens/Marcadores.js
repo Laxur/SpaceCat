@@ -7,7 +7,7 @@ import FavoritosButton from '../../components/FavoritosButton';
 const backgroundImg = require('../../assets/Galaxia.jpeg');
 const PlaceholderImage = require('../../assets/Fperfil.jpg');
 
-const Perfil = ({ navigation }) => {
+const Marcadores = ({ navigation }) => {
   const [imageUri, setImageUri] = useState(null);
 
   useEffect(() => {
@@ -30,8 +30,8 @@ const Perfil = ({ navigation }) => {
 
       if (!result.canceled) {
         const selectedImage = result.assets[0];
-      setImageUri(selectedImage.uri);
-      guardarImagenPerfil(selectedImage.uri);
+        setImageUri(selectedImage.uri);
+        guardarImagenPerfil(selectedImage.uri);
       }
     } catch (error) {
       console.log(error);
@@ -42,24 +42,21 @@ const Perfil = ({ navigation }) => {
     <ScrollView contentContainerStyle={styles.container}>
       <ImageBackground source={backgroundImg} style={styles.backgroundImage}>
         <View style={styles.imageContainer}>
-        <TouchableOpacity onPress={() => navigation.openDrawer()}>
-          <ImageBackground source={require('../../assets/LogoV2.png')} style={styles.menu} />
-        </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.openDrawer()}>
+            <ImageBackground source={require('../../assets/LogoV2.png')} style={styles.menu} />
+          </TouchableOpacity>
           <TouchableOpacity onPress={abrirSelectorDeImagen}>
             <Image source={imageUri ? { uri: imageUri } : PlaceholderImage} style={styles.image} />
           </TouchableOpacity>
           <View style={styles.buttonsContainer}>
-        <MarcadoresButton />
-        <FavoritosButton />
-      </View>
+            <MarcadoresButton /> 
+            <FavoritosButton />
+          </View>
         </View>
       </ImageBackground>
     </ScrollView>
   );
 };
-
-export default Perfil;
-
 
 const styles = StyleSheet.create({
 
@@ -98,3 +95,5 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
 });
+
+export default Marcadores;
