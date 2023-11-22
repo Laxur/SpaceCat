@@ -78,7 +78,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
   },
   titulo: {
     fontSize: 65,
@@ -99,8 +98,8 @@ const styles = StyleSheet.create({
     padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    alignSelf: 'center', // Alineación horizontal
-    textAlign: 'center', // Alineación vertical
+    alignSelf: 'center', 
+    textAlign: 'center', 
     marginTop: 20,
     marginBottom: 10, // Espacio inferior
   },
@@ -120,6 +119,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff', // Color de fondo del botón
     padding: 10,
     borderRadius: 30,
+    marginTop: 20,
+    marginLeft: 60,
   },
   searchIcon: {
     color: 'lightblue',

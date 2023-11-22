@@ -5,18 +5,20 @@ import { FIREBASE_AUTH } from './FirebaseConfig';
 
 const backgroundImg = require('./assets/fondoV2.jpeg');
 
-const handleSignOut = async () => {
-  try {
-    await FIREBASE_AUTH.signOut();
-    navigation.navigate('Login'); 
-  } catch (error) {
-    console.error('Error al cerrar sesión', error);
-  }
-};
-
 const CustomDrawer = (props) => {
+  const { navigation } = props;
+
+  const handleSignOut = async () => {
+    try {
+      await FIREBASE_AUTH.signOut();
+      navigation.navigate('Login');
+    } catch (error) {
+      console.error('Error al cerrar sesión', error);
+    }
+  };
+
   return (
-    <ImageBackground source={backgroundImg} style={{flex: 1}}>
+    <ImageBackground source={backgroundImg} style={{ flex: 1 }}>
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
         <View style={{ padding: 20, borderTopWidth: 1, borderTopColor: 'black' }}>
@@ -30,3 +32,4 @@ const CustomDrawer = (props) => {
 };
 
 export default CustomDrawer;
+
